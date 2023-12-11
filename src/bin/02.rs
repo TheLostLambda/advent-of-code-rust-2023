@@ -29,8 +29,8 @@ fn is_possible_draw(draw: &str) -> bool {
         .filter_map(|c| Some((c.get(1)?.as_str().parse::<u32>().ok()?, c.get(2)?.as_str())))
         .all(|(n, c)| match c {
             "red" => n <= BAG.0,
-            "blue" => n <= BAG.1,
-            "green" => n <= BAG.2,
+            "green" => n <= BAG.1,
+            "blue" => n <= BAG.2,
             _ => panic!("Invalid colour"),
         })
 }
