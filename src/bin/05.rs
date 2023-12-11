@@ -1,8 +1,12 @@
-use std::collections::HashMap;
-
 use itertools::Itertools;
 use regex::Regex;
+use std::collections::HashMap;
+
 advent_of_code::solution!(5);
+
+// FIXME: This is fundamentally correct, but the building of the HashMaps eats
+// all of the computer's memory (and was a bit of a silly idea to start with...)
+// I'll have to replace that with some more clever maths!
 
 fn build_map<'a>(lines: &[&'a str]) -> (&'a str, (&'a str, HashMap<u32, u32>)) {
     let (_, [from, to]) = Regex::new(r"(\w+)-to-(\w+) map:")

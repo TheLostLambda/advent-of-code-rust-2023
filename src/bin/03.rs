@@ -8,7 +8,7 @@ advent_of_code::solution!(3);
 // do better eventually!
 
 fn extract_symbols(lines: &[(usize, &str)]) -> Vec<(usize, usize)> {
-    let symbol = Regex::new(r"[\*\+#$]").unwrap();
+    let symbol = Regex::new(r"[^\d\.]").unwrap();
     lines
         .iter()
         .flat_map(|(r, s)| symbol.find_iter(s).map(|m| (*r, m.start())))
