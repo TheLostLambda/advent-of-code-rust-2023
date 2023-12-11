@@ -24,6 +24,7 @@ dependencies = [
  "chrono",
  "dhat",
  "itertools",
+ "once_cell",
  "pico-args",
  "rand",
  "regex",
