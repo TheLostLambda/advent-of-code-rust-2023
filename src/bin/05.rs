@@ -52,7 +52,7 @@ pub fn part_one(input: &str) -> Option<u32> {
         .collect_vec()
         .split(|l| l.is_empty())
         .filter(|m| !m.is_empty())
-        .map(|t| build_map(t))
+        .map(build_map)
         .collect();
     seeds.iter().map(|s| seed_to_endpoint(&mappings, *s)).min()
 }
